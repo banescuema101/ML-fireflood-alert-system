@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<informationPackage xmlns="http://www.eumetsat.int/sip">
+    <dataSection>
+        <dataObject ID="browse.jpg">
+            <fileType>Browse</fileType>
+            <format>JPEG</format>
+            <size>18531</size>
+            <path>browse.jpg</path>
+        </dataObject>
+        <dataObject ID="S3B_SL_2_FRP____20250811T090721_20250811T091221_20250811T111101_0299_109_378______MAR_O_NR_003.SEN3/FRP_SWIR500m.nc">
+            <fileType>Data</fileType>
+            <format>NetCDF</format>
+            <size>20553</size>
+            <path>S3B_SL_2_FRP____20250811T090721_20250811T091221_20250811T111101_0299_109_378______MAR_O_NR_003.SEN3/FRP_SWIR500m.nc</path>
+        </dataObject>
+        <dataObject ID="S3B_SL_2_FRP____20250811T090721_20250811T091221_20250811T111101_0299_109_378______MAR_O_NR_003.SEN3/geodetic_in.nc">
+            <fileType>Data</fileType>
+            <format>NetCDF</format>
+            <size>11882153</size>
+            <path>S3B_SL_2_FRP____20250811T090721_20250811T091221_20250811T111101_0299_109_378______MAR_O_NR_003.SEN3/geodetic_in.nc</path>
+        </dataObject>
+        <dataObject ID="S3B_SL_2_FRP____20250811T090721_20250811T091221_20250811T111101_0299_109_378______MAR_O_NR_003.SEN3/FRP_MWIR1km_standard.nc">
+            <fileType>Data</fileType>
+            <format>NetCDF</format>
+            <size>1387988</size>
+            <path>S3B_SL_2_FRP____20250811T090721_20250811T091221_20250811T111101_0299_109_378______MAR_O_NR_003.SEN3/FRP_MWIR1km_standard.nc</path>
+        </dataObject>
+        <dataObject ID="S3B_SL_2_FRP____20250811T090721_20250811T091221_20250811T111101_0299_109_378______MAR_O_NR_003.SEN3/FRP_MWIR1km_alternative.csv">
+            <fileType>Data</fileType>
+            <format>Native</format>
+            <size>11989</size>
+            <path>S3B_SL_2_FRP____20250811T090721_20250811T091221_20250811T111101_0299_109_378______MAR_O_NR_003.SEN3/FRP_MWIR1km_alternative.csv</path>
+        </dataObject>
+        <dataObject ID="S3B_SL_2_FRP____20250811T090721_20250811T091221_20250811T111101_0299_109_378______MAR_O_NR_003.SEN3/FRP_MWIR1km_standard.csv">
+            <fileType>Data</fileType>
+            <format>Native</format>
+            <size>8952</size>
+            <path>S3B_SL_2_FRP____20250811T090721_20250811T091221_20250811T111101_0299_109_378______MAR_O_NR_003.SEN3/FRP_MWIR1km_standard.csv</path>
+        </dataObject>
+        <dataObject ID="S3B_SL_2_FRP____20250811T090721_20250811T091221_20250811T111101_0299_109_378______MAR_O_NR_003.SEN3/FRP_SWIR500m.csv">
+            <fileType>Data</fileType>
+            <format>Native</format>
+            <size>1112</size>
+            <path>S3B_SL_2_FRP____20250811T090721_20250811T091221_20250811T111101_0299_109_378______MAR_O_NR_003.SEN3/FRP_SWIR500m.csv</path>
+        </dataObject>
+        <dataObject ID="S3B_SL_2_FRP____20250811T090721_20250811T091221_20250811T111101_0299_109_378______MAR_O_NR_003.SEN3/FRP_MWIR1km_alternative.nc">
+            <fileType>Data</fileType>
+            <format>NetCDF</format>
+            <size>1482628</size>
+            <path>S3B_SL_2_FRP____20250811T090721_20250811T091221_20250811T111101_0299_109_378______MAR_O_NR_003.SEN3/FRP_MWIR1km_alternative.nc</path>
+        </dataObject>
+        <dataObject ID="S3B_SL_2_FRP____20250811T090721_20250811T091221_20250811T111101_0299_109_378______MAR_O_NR_003.SEN3/xfdumanifest.xml">
+            <fileType>Data</fileType>
+            <format>XML</format>
+            <size>201282</size>
+            <path>S3B_SL_2_FRP____20250811T090721_20250811T091221_20250811T111101_0299_109_378______MAR_O_NR_003.SEN3/xfdumanifest.xml</path>
+        </dataObject>
+        <dataObject ID="S3B_SL_2_FRP____20250811T090721_20250811T091221_20250811T111101_0299_109_378______MAR_O_NR_003.SEN3/FRP_Merged_MWIR1kmStandard_SWIR1km.nc">
+            <fileType>Data</fileType>
+            <format>NetCDF</format>
+            <size>84306</size>
+            <path>S3B_SL_2_FRP____20250811T090721_20250811T091221_20250811T111101_0299_109_378______MAR_O_NR_003.SEN3/FRP_Merged_MWIR1kmStandard_SWIR1km.nc</path>
+        </dataObject>
+    </dataSection>
+    <eopmetadataSection>
+        <path>EOPMetadata.xml</path>
+    </eopmetadataSection>
+</informationPackage>

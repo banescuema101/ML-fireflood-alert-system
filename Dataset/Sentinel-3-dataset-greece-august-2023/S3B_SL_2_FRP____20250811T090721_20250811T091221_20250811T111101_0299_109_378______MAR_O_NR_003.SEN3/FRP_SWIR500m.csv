@@ -1,0 +1,20 @@
+#title = SLSTR Level 2 Product, Fire Radiative Power (FRP) measurement, Near Real Time (NRT)
+#description = csv output from the SWIR 500m scheme
+#product_name = S3B_SL_2_FRP____20250811T090721_20250811T091221_20250811T111101_0299_109_378______MAR_O_NR_003.SEN3
+#institution = EUMETSAT (Darmstadt, Germany)
+#source = IPF-SL-2-FRP 04.03
+#history = 
+#reference1 = EUM/RSP/DOC/20/1169482 - EUMETSAT - FRP_NRT.003.00 SLSTR L2 NRT FRP Product Data Format Specification
+#reference2 = S3IPF PDS 002 - i1r8 - Product Data Format Specification - Product Structures
+#reference3 = S3MPC ACR FRP 002 - i1r3 - SLSTR L2 FRP Detailed processing model
+#contact = ops@eumetsat.int
+#creation_time = Mon Aug 11 11:11:25 2025
+#absolute_orbit_number = 37995
+#start_time = 2025-08-11T09:07:21.169453Z
+#stop_time = 2025-08-11T09:12:21.158996Z
+#processing baseline = FRP_NRT.003.01.00
+#track_offset = 998
+#start_offset = 14010
+#number_of_detected_fires = 0
+
+lat(deg),lon(deg),day,time,D/N,FRP(MW),FRPerr(MW),used_channel,SWIR_SAA_confidence(%),IFOV_area(m2),SZA(deg),VZA(deg),eff_across_track_size(km),eff_along_track_size(km),satellite
