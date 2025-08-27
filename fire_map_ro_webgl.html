@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <title>pydeck</title>
+        <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v1.13.0/mapbox-gl.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
+    <script src='https://cdn.jsdelivr.net/npm/@deck.gl/jupyter-widget@~9.0.*/dist/index.js'></script>
+    <style>
+    body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+#deck-container {
+  width: 100vw;
+  height: 100vh;
+}
+
+#deck-container canvas {
+  z-index: 1;
+  background: #ffffff;
+}
+    </style>
+  </head>
+  <body>
+    <div id="deck-container">
+    </div>
+  </body>
+  <script>
+    const container = document.getElementById('deck-container');
+    const jsonInput = {
+  "initialViewState": {
+    "bearing": 0,
+    "latitude": 46.853745,
+    "longitude": 39.56231700000001,
+    "maxZoom": 12,
+    "minZoom": 4,
+    "pitch": 0,
+    "zoom": 5.5
+  },
+  "layers": [
+    {
+      "@@type": "ScatterplotLayer",
+      "autoHighlight": true,
+      "data": [
+        {
+          "_a": 255,
+          "_b": 40,
+          "_g": 30,
+          "_r": 220,
+          "latitude": 47.420784,
+          "longitude": 39.90649400000001,
+          "pred": 1,
+          "proba_fire": 1.0
+        },
+        {
+          "_a": 255,
+          "_b": 40,
+          "_g": 30,
+          "_r": 220,
+          "latitude": 46.8596,
+          "longitude": 39.536940000000016,
+          "pred": 1,
+          "proba_fire": 1.0
+        },
+        {
+          "_a": 255,
+          "_b": 40,
+          "_g": 30,
+          "_r": 220,
+          "latitude": 46.856663,
+          "longitude": 39.54965200000001,
+          "pred": 1,
+          "proba_fire": 1.0
+        },
+        {
+          "_a": 255,
+          "_b": 40,
+          "_g": 30,
+          "_r": 220,
+          "latitude": 46.853745,
+          "longitude": 39.56231700000001,
+          "pred": 1,
+          "proba_fire": 1.0
+        },
+        {
+          "_a": 255,
+          "_b": 40,
+          "_g": 30,
+          "_r": 220,
+          "latitude": 45.53574,
+          "longitude": 43.214095999999984,
+          "pred": 1,
+          "proba_fire": 1.0
+        },
+        {
+          "_a": 255,
+          "_b": 40,
+          "_g": 30,
+          "_r": 220,
+          "latitude": 45.623352,
+          "longitude": 38.60043300000001,
+          "pred": 1,
+          "proba_fire": 1.0
+        },
+        {
+          "_a": 255,
+          "_b": 40,
+          "_g": 30,
+          "_r": 220,
+          "latitude": 44.43576,
+          "longitude": 41.54319799999999,
+          "pred": 1,
+          "proba_fire": 1.0
+        }
+      ],
+      "getFillColor": "@@=[_r, _g, _b, _a]",
+      "getPosition": "@@=[longitude, latitude]",
+      "getRadius": 120.0,
+      "id": "2b7711e9-2edb-42ea-adc3-eba68e2c7877",
+      "opacity": 1.0,
+      "pickable": true,
+      "radiusMaxPixels": 10,
+      "radiusMinPixels": 1,
+      "stroked": false
+    }
+  ],
+  "mapProvider": "carto",
+  "mapStyle": "https://basemaps.cartocdn.com/gl/positron-gl-style/style.json",
+  "views": [
+    {
+      "@@type": "MapView",
+      "controller": true
+    }
+  ]
+};
+    const tooltip = {'html': '<b>p_fire</b>={proba_fire:.3f}<br/><b>pred</b>={pred}', 'style': {'backgroundColor': 'white', 'color': 'black'}};
+    const customLibraries = null;
+    const configuration = null;
+
+    const deckInstance = createDeck({
+                  container,
+      jsonInput,
+      tooltip,
+      customLibraries,
+      configuration
+    });
+
+  </script>
+</html>

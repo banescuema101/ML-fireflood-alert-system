@@ -1,0 +1,22 @@
+{
+  "features": [
+    "MWIR_Fire_pixel_BT",
+    "S8_Fire_pixel_BT",
+    "FRP_MWIR",
+    "solar_zenith",
+    "sat_zenith",
+    "TCWV"
+  ],
+  "confidence_label_threshold": 80,
+  "decision_threshold": 0.5000000000000001,
+  "target_precision": 0.8,
+  "random_state": 42,
+  "class_weight": {
+    "0": 2.7142857142857144,
+    "1": 0.6129032258064516
+  },
+  "model_type": "DecisionTreeClassifier",
+  "training_files": [
+    "/home/banescuema/ROSPIN/ML-fireflood-alert-system/Dataset/Sentinel-3-dataset-greece-august-2023/S3B_SL_2_FRP____20250811T090721_20250811T091221_20250811T111101_0299_109_378______MAR_O_NR_003.SEN3/FRP_MWIR1km_standard.nc"
+  ]
+}
