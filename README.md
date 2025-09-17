@@ -156,6 +156,3 @@ The distribution of fire probability for each pixel is only one click away.
 
 #### Brașov county:
 ![A subdivision of the map, visuallised on a certain county](docs/fire_county_2_level.png)
-
-
-

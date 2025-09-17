@@ -1,0 +1,9 @@
+xarray
+netCDF4
+pandas
+numpy
+scikit-learn
+joblib
+folium
+geopandas
+shapely

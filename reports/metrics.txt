@@ -1,0 +1,16 @@
+Acuratete (thr=0.5): 0.824
+PR-AUC: 0.824
+Prag ales: 0.500  (recall @ precision≥80% = 1.000)
+Classification report (thr=0.5):
+              precision    recall  f1-score   support
+
+           0      0.000     0.000     0.000         3
+           1      0.824     1.000     0.903        14
+
+    accuracy                          0.824        17
+   macro avg      0.412     0.500     0.452        17
+weighted avg      0.678     0.824     0.744        17
+
+Confusion matrix (thr=0.5):
+[[ 0  3]
+ [ 0 14]]
