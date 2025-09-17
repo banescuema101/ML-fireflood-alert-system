@@ -90,13 +90,21 @@ python lst/predict_pixels_from_LST_model.py \
   --proba-th 0.2
 ```
 **--lst-sen3** → Folder with Sentinel-3 LST product (new scene).
-**--lst-nc** / --lat-nc / --lon-nc → NetCDF files with temperature, latitude, longitude.
+
+**--lst-nc / --lat-nc / --lon-nc** → NetCDF files with temperature, latitude, longitude.
+
 **--lst-var** / --lat-var / --lon-var → Variable names inside the NetCDF files.
+
 **--model** → Path to the trained Random Forest model.
+
 **--out** → Output file with predictions (probabilities + binary labels).
+
 **--bbox** → Bounding box to crop region (min_lat, min_lon, max_lat, max_lon).
+
 **--kernel** → Window size for local stats when building features.
+
 **--proba-th** → Probability threshold for classifying fire vs non-fire pixels.
+
 
 ## Methodology and Functionality
 The pipeline is built around:
