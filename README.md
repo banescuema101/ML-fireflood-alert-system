@@ -9,8 +9,8 @@ in order to detect abnormal heating patterns that may indicate fire events.
 ## Technologies Used
 ### Copernicus Sentinel-3 LST products 
   -  to obtain land surface temperature data at scale.
-  -  
-### Python with these main libraries: numpy, pandas
+
+### numpy, pandas
   — numerical data processing
 
 ### geopandas, folium 
