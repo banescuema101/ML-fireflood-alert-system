@@ -33,24 +33,24 @@ def main():
         X, y, 
         test_size=args.test_size, 
         random_state=42, 
-        stratify=y   # pastreaza distributia claselor
+        stratify=y   # pastram distributia claselor
     )
 
-    # Definire si antrenare model Random Forest
+    # partea de definire si antrenare model - Random Forest
     clf = RandomForestClassifier(
         n_estimators=300,      # nr. de arbori
         max_depth=18,          # adancimea maxima a arborilor
-        class_weight="balanced", # balansare automata a claselor (important la dataset dezechilibrat)
+        class_weight="balanced", # balansare automata a claselor (bun pe dataseturi dezechilibrate)
         n_jobs=-1,             # foloseste toate core-urile CPU
         random_state=42
     )
     clf.fit(Xtr, ytr)           # antrenam modelul pe setul de train
 
-    # Evaluare pe setul de test
+    # evaluare pe setul de test
     prob = clf.predict_proba(Xte)[:,1]  # probabilitatea pentru clasa pozitiva
     print("ROC AUC:", roc_auc_score(yte, prob))  # scor AUC ROC
     # clasificare binara cu prag 0.5 si raport complet
-    print(classification_report(yte, (prob>=0.5).astype(int), digits=3))
+    print(classification_report(yte, (prob>=0.3).astype(int), digits=3))
 
     # Salvare model antrenat
     joblib.dump({"model": clf, "features": FEATURES}, args.out)

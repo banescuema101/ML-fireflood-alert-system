@@ -10,16 +10,16 @@ PIXEL_MAPS_DIR = "pixel_maps"
 
 os.makedirs(PIXEL_MAPS_DIR, exist_ok=True)
 
-# 1) Încărcăm datele
+# 1) incarcam datele
 df = pd.read_parquet(PRED_FILE)
 gdf_points = gpd.GeoDataFrame(df, geometry=gpd.points_from_xy(df.longitude, df.latitude), crs="EPSG:4326")
 counties = gpd.read_file(COUNTY_FILE).to_crs("EPSG:4326")
 name_col = "NAME_1"
 
-# 2) Join spațial: pixel -> județ
+# 2) Join spatial: pixel -> judet
 joined = gpd.sjoin(gdf_points, counties, how="inner", predicate="within")
 
-# 3) Agregare statistici pe județ
+# 3) Agregarea statisticilor pe judet
 stats = joined.groupby(name_col).agg(
     total_pixels=("pred", "size"),
     fires=("pred", "sum"),
@@ -27,10 +27,10 @@ stats = joined.groupby(name_col).agg(
 ).reset_index()
 stats["fire_rate"] = stats["fires"] / stats["total_pixels"]
 
-# 4) Îmbinăm cu poligoane
+# 4) imbinarea cu poligoane
 counties_stats = counties.merge(stats, on=name_col, how="left").fillna(0)
 
-# 5) Hartă principală
+# 5) harta principala
 m = folium.Map(location=[45.8, 24.9], zoom_start=7, tiles="cartodbpositron")
 
 choropleth = folium.Choropleth(
@@ -44,14 +44,14 @@ choropleth = folium.Choropleth(
     legend_name="Procent pixeli incendiu"
 ).add_to(m)
 
-# 6) Pentru fiecare județ facem o hartă de pixeli separată
+# 6) Pentru fiecare judet facem o harta de pixeli separata
 for county_name in counties_stats[name_col]:
     subset = joined[joined[name_col] == county_name]
 
     if subset.empty:
         continue
 
-    # hartă mică pentru județ
+    # harta mica pentru judet
     m_county = folium.Map(
         location=[subset.geometry.y.mean(), subset.geometry.x.mean()],
         zoom_start=8, tiles="cartodbpositron"
@@ -67,17 +67,17 @@ for county_name in counties_stats[name_col]:
             fill_opacity=0.7
         ).add_to(m_county)
 
-    # salvăm harta pe județ
+    # salvam harta pe judet
     county_file = os.path.join(PIXEL_MAPS_DIR, f"map_{county_name}.html")
     m_county.save(county_file)
 
-    # adăugăm link în harta principală (popup pe județ)
+    # adaugam link in harta principala (popup pe judet)
     folium.Marker(
         location=[subset.geometry.y.mean(), subset.geometry.x.mean()],
         popup=f"<a href='{county_file}' target='_blank'>Vezi pixeli {county_name}</a>"
     ).add_to(m)
 
-# 7) Salvăm harta principală
+# 7) Salvam harta principala
 m.save(OUT_HTML)
-print(f">> Hartă principală salvată în {OUT_HTML}")
-print(f">> Hărțile pixel-level sunt în folderul {PIXEL_MAPS_DIR}")
+print(f">> Harta principala salvata in {OUT_HTML}")
+print(f">> Hartile pixel-level sunt in folderul {PIXEL_MAPS_DIR}")

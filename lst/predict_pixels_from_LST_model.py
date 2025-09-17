@@ -65,7 +65,7 @@ def main():
     }).dropna()  # eliminam valorile lipsa
 
     # Subsampling optional
-    if args.sample>0 and len(df)>args.sample:
+    if args.sample > 0 and len(df) > args.sample:
         df = df.sample(args.sample, random_state=42)
 
     # Predictii cu modelul ML

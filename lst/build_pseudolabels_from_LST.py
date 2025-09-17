@@ -84,7 +84,7 @@ def main():
         lon = lon.isel({ydim: slice(None, None, s), xdim: slice(None, None, s)})
 
     # 4) Calcul features locale (rolling)
-    # Se calculeaza mediana, MAD, media, deviatia standard si zmad intr-o fereastra locala
+    # Calculam mediana, MAD, media, deviatia standard si zmad intr-o fereastra locala
     med, mad, mean, std, zmad = rolling_feats(LST, ydim, xdim, k=args.kernel)
 
     # 5) Vectorizare in DataFrame Pandas
@@ -103,15 +103,15 @@ def main():
     if df.empty:
         raise SystemExit("Nicio observatie valida dupa preprocesare (BBOX/stride?).")
 
-    # 6) Generare pseudo-labels (manual) ===
+    # Generare de pseudo-labels (manual)
     pos_mask = (df["zmad_k"] >= args.z_pos) & (df["LST_K"] >= args.k_pos)  # pozitivi = anomalii fierbinti
     neg_mask = (df["zmad_k"] <= args.z_neg) & (df["LST_K"] <= args.k_neg)  # negativi = zone reci si stabile
     pos_df = df[pos_mask]
     neg_df = df[neg_mask]
 
-    # 6b) Fallback AUTO daca nu exista pozitivi
+    # Fallback AUTO daca nu exista pozitivi
     if len(pos_df) == 0 and args.auto:
-        # Se calculeaza pragurile automat din cuantile
+        # Practic, se calculeaza pragurile automat din cuantile
         k_pos_auto = float(df["LST_K"].quantile(args.pos_q))
         z_pos_auto = max(float(df["zmad_k"].quantile(args.pos_q)), args.zmin)
         k_neg_auto = float(df["LST_K"].quantile(args.neg_q))
