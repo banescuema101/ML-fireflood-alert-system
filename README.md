@@ -3,8 +3,7 @@
 ## Idea and Motivation
 
 Forest fires are one of the most critical environmental threats in Europe, affecting ecosystems, human safety, and climate.
-This project explores the potential of **Land Surface Temperature (LST)** data (from the Copernicus Sentinel-3 mission)
-in order to detect abnormal heating patterns that may indicate fire events.
+The project aims to develop a prototype Large Language Model (LLM) capable of retrieving satellite datasets through the Copernicus Open Access Hub and using them to accurately predict areas at risk of wildfires. The model will present the predicted information in an easy-to-understand format, making it accessible both to emergency response teams and to local residents who may be affected.
 
 ## Technologies Used
 ### Copernicus Sentinel-3 LST products 
